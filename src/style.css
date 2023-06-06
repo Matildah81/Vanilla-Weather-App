@@ -1,5 +1,5 @@
 h1 {
-    color: #7a7ac7;
+    color: black;
     margin: 0;
     margin-bottom: 0;
   }
@@ -35,13 +35,15 @@ h1 {
   }
 
   .Weather-App-Wrapper {
-    max-width: 635px;
+    max-width: 900px;
      margin: 30px auto;
+     
 
    }
    .Weather-App {
     padding: 20px;
     border: 1px solid #dadde1;
-    border-radius: 8px;
+    border-radius: 30px;
+    background-color: lightslategray;
     
 }
