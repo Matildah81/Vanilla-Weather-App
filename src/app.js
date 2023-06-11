@@ -36,6 +36,7 @@ function displayTemperature(response) {
 
 
 
+  celsiusTemperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -60,11 +61,22 @@ axios.get(apiUrl).then(displayTemperature);
   function handlesubmit(event) {
     event.preventDefault();
     let cityInputElement = document.querySelector("#city-input");
+
     search(cityInputElement.value);
   }
 
-search("Johannesburg");
+  function displayCelsiusTemperature(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(celsiusTemperature)
+  }
+
+
+let celsiusTemperature = null;
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handlesubmit);
+search("Johannesburg");
 
